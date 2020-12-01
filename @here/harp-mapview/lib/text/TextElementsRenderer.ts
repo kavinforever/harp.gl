@@ -1654,7 +1654,7 @@ export class TextElementsRenderer {
             this.m_viewState.lookAtDistance
         );
         const iconReady =
-            renderIcon && poiRenderer?.prepareRender(pointLabel, this.m_viewState.env);
+            renderIcon && poiRenderer?.prepareRender(pointLabel, this.m_viewState.env) === true;
         let iconInvisible = false;
         if (iconReady) {
             const result = placeIcon(
@@ -1681,11 +1681,10 @@ export class TextElementsRenderer {
             labelState,
             this.m_viewState.maxVisibilityDist
         );
-        const renderText = shouldRenderPointText(labelState, this.m_viewState, this.m_options);
 
         // Render the label's text...
         // textRenderState is always defined at this point.
-        if (renderText && textCanvas) {
+        if (textCanvas && shouldRenderPointText(labelState, this.m_viewState, this.m_options)) {
             // For the new labels with rejected icons we don't need to go further.
             const newLabel = !labelState.visible;
 
