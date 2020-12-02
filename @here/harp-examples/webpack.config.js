@@ -106,7 +106,10 @@ const commonConfig = {
         new webpack.DefinePlugin({
             THEMES: JSON.stringify(themeList)
         })
-    ]
+    ],
+    cache: {
+        type: "filesystem"
+    }
 };
 
 const decoderConfig = merge(commonConfig, {

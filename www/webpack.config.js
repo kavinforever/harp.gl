@@ -62,7 +62,10 @@ const commonConfig = {
     performance: {
         hints: false
     },
-    mode: process.env.NODE_ENV || "development"
+    mode: process.env.NODE_ENV || "development",
+    cache: {
+        type: "filesystem"
+    }
 };
 
 const mainConfig = merge(commonConfig, {

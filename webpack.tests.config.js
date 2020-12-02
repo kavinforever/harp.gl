@@ -149,7 +149,10 @@ const browserTestsConfig = {
         warnings: true
     },
     // @ts-ignore
-    mode: process.env.NODE_ENV || "development"
+    mode: process.env.NODE_ENV || "development",
+    cache: {
+        type: "filesystem"
+    }
 };
 
 module.exports = browserTestsConfig;

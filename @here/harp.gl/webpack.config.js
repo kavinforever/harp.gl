@@ -55,7 +55,10 @@ const commonConfig = {
         hints: false
     },
     // @ts-ignore
-    mode: process.env.NODE_ENV || "development"
+    mode: process.env.NODE_ENV || "development",
+    cache: {
+        type: "filesystem"
+    }
 };
 
 const mapComponentConfig = merge(commonConfig, {
